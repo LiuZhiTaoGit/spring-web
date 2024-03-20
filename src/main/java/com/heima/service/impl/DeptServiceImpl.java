@@ -1,7 +1,12 @@
 package com.heima.service.impl;
 
+import com.heima.mapper.DeptMapper;
+import com.heima.pojo.Dept;
 import com.heima.service.DeptService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author: liuzt
@@ -11,4 +16,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DeptServiceImpl implements DeptService {
+    @Autowired
+    private DeptMapper deptMapper;
+
+
+    /**
+     * 查询全部部门数据
+     * @return
+     */
+    @Override
+    public List<Dept> list() {
+        return deptMapper.list();
+    }
 }
